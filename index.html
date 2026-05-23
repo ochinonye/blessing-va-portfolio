@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Remote virtual assistant and web support specialist helping businesses stay organized, coordinated, and polished online. Reliable workflow management and digital operations support.">
+    <meta name="author" content="Blessing Okorie-Oruh">
+    <link rel="canonical" href="https://ochinonye.github.io/blessing-va-portfolio/">
+
+    <meta property="og:title" content="Blessing Okorie-Oruh — Virtual Assistant & Web Support Specialist">
+    <meta property="og:description" content="Remote virtual assistant and web support specialist helping businesses stay organized, coordinated, and polished online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ochinonye.github.io/blessing-va-portfolio/">
+    <!-- <meta property="og:image" content="https://ochinonye.github.io/blessing-va-portfolio/og-image.jpg"> -->
+
+    <!-- <meta name="twitter:card" content="summary_large_image"> -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blessing Okorie-Oruh — Virtual Assistant & Web Support Specialist">
+    <meta name="twitter:description" content="Remote virtual assistant and web support specialist helping businesses stay organized, coordinated, and polished online.">
+    <!-- <meta name="twitter:image" content="https://ochinonye.github.io/blessing-va-portfolio/og-image.jpg"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #F8F7F4;
+            --bg-secondary: #F0EDE8;
+            --bg-tertiary: #E8E4DD;
+            --text-primary: #1C1917;
+            --text-secondary: #44403C;
+            --text-muted: #78716C;
+            --text-light: #A8A29E;
+            --accent: #2D6A4F;
+            --accent-light: #40916C;
+            --accent-muted: #74C69D;
+            --accent-bg: #D8F3DC;
+            --accent-bg-soft: #E9F5EC;
+            --border: #D6D3CE;
+            --border-light: #E7E5E0;
+            --shadow-sm: 0 1px 3px rgba(28,25,23,0.04);
+            --shadow-md: 0 4px 16px rgba(28,25,23,0.06);
+            --shadow-lg: 0 12px 40px rgba(28,25,23,0.08);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --max-width: 1120px;
+            --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.65;
+            font-size: 15.5px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.94);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-sm); }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: var(--accent);
+            font-weight: 500;
+            font-style: italic;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: var(--transition);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0;
+            width: 0; height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section { padding: 5rem 2rem; }
+        .container { max-width: var(--max-width); margin: 0 auto; }
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 6rem;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(45,106,79,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-bg-soft);
+            border: 1px solid rgba(45,106,79,0.12);
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.12;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+        .hero-statement {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 480px;
+        }
+        .hero-intro {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+            max-width: 460px;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.7rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg-soft);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-ghost:hover {
+            border-color: var(--text-muted);
+            color: var(--text-primary);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+        .hero-visual-inner {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-visual-inner::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(45,106,79,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .visual-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+        .visual-dots {
+            display: flex;
+            gap: 0.4rem;
+        }
+        .visual-dots span {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+        }
+        .visual-dots span:first-child { background: #D4A574; }
+        .visual-dots span:nth-child(2) { background: var(--accent-light); }
+        .visual-dots span:last-child { background: var(--text-light); }
+        .visual-title {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        .visual-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .v-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 0.9rem 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: var(--transition);
+        }
+        .v-card:hover {
+            border-color: var(--border);
+            box-shadow: var(--shadow-sm);
+            transform: translateX(3px);
+        }
+        .v-card-icon {
+            width: 34px; height: 34px;
+            border-radius: var(--radius-sm);
+            background: var(--accent-bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .v-card-text { flex: 1; }
+        .v-card-text strong {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.1rem;
+        }
+        .v-card-text span {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+        .v-card-status {
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 100px;
+            background: var(--accent-bg);
+            color: var(--accent);
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        .about-left {
+            position: sticky;
+            top: 100px;
+        }
+        .about-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.18;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        .about-left h2 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+        .about-divider {
+            width: 48px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .about-right p {
+            font-size: 1.02rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+        .about-right p:last-child { margin-bottom: 0; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .highlight-item {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+        .highlight-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            min-width: 32px;
+        }
+        .highlight-text strong {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+        .highlight-text span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== WORK ===== */
+        .work { background: var(--bg-primary); }
+        .work-header { margin-bottom: 3.5rem; }
+        .work-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .work-header p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.65;
+        }
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .project-item:nth-child(even) {
+            direction: rtl;
+        }
+        .project-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        /* PROJECT VISUAL — styled preview cards instead of browser mockups */
+        .project-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .project-visual:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-color: var(--border);
+        }
+        .project-visual-inner {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .pv-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .pv-header-dots {
+            display: flex;
+            gap: 0.35rem;
+        }
+        .pv-header-dots span {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+        }
+        .pv-header-dots span:nth-child(1) { background: #E8A87C; }
+        .pv-header-dots span:nth-child(2) { background: var(--accent-light); }
+        .pv-header-dots span:nth-child(3) { background: var(--text-light); }
+        .pv-header-title {
+            font-size: 0.68rem;
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        /* Project A — ElevateOps (Landing Page style) */
+        .pv-elevateops .pv-hero {
+            background: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%);
+            border-radius: var(--radius-sm);
+            padding: 1.8rem 1.5rem;
+            color: #fff;
+            text-align: center;
+        }
+        .pv-elevateops .pv-hero h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+        }
+        .pv-elevateops .pv-hero p {
+            font-size: 0.72rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        .pv-elevateops .pv-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+        .pv-elevateops .pv-stat {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+        .pv-elevateops .pv-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+        }
+        .pv-elevateops .pv-stat-label {
+            font-size: 0.6rem;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+        }
+        .pv-elevateops .pv-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        .pv-elevateops .pv-svc {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.7rem;
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .pv-elevateops .pv-svc-icon {
+            width: 18px; height: 18px;
+            border-radius: 4px;
+            background: var(--accent-bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        /* Project B — Workflow System */
+        .pv-workflow .pv-flow-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .pv-workflow .pv-flow-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .pv-workflow .pv-flow-sub {
+            font-size: 0.65rem;
+            color: var(--text-light);
+        }
+        .pv-workflow .pv-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .pv-workflow .pv-step {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 0.7rem 0.8rem;
+        }
+        .pv-workflow .pv-step-num {
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pv-workflow .pv-step-text {
+            flex: 1;
+        }
+        .pv-workflow .pv-step-text strong {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.05rem;
+        }
+        .pv-workflow .pv-step-text span {
+            font-size: 0.62rem;
+            color: var(--text-light);
+        }
+        .pv-workflow .pv-step-arrow {
+            font-size: 0.7rem;
+            color: var(--accent-light);
+        }
+        .pv-workflow .pv-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .pv-workflow .pv-metric {
+            background: var(--accent-bg-soft);
+            border: 1px solid rgba(45,106,79,0.1);
+            border-radius: var(--radius-sm);
+            padding: 0.7rem;
+            text-align: center;
+        }
+        .pv-workflow .pv-metric-val {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .pv-workflow .pv-metric-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+
+        /* Project C — UX Case Study */
+        .pv-ux .pv-ux-header {
+            background: linear-gradient(135deg, #44403C 0%, #1C1917 100%);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            color: #fff;
+        }
+        .pv-ux .pv-ux-header h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .pv-ux .pv-ux-header p {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .pv-ux .pv-issues {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .pv-ux .pv-issue {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.8rem;
+        }
+        .pv-ux .pv-issue-icon {
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: #FEF3C7;
+            color: #92400E;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pv-ux .pv-issue-text {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+        .pv-ux .pv-solutions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        .pv-ux .pv-sol {
+            background: var(--accent-bg-soft);
+            border: 1px solid rgba(45,106,79,0.1);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem;
+            text-align: center;
+        }
+        .pv-ux .pv-sol-icon {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .pv-ux .pv-sol-text {
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .project-tag {
+            display: inline-flex;
+            align-self: flex-start;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-bg-soft);
+            padding: 0.25rem 0.7rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+        .project-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.25;
+        }
+        .project-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-meta span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+        .project-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .project-actions .btn {
+            padding: 0.65rem 1.3rem;
+            font-size: 0.84rem;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .skills-header { margin-bottom: 2.5rem; }
+        .skills-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .skills-header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .skill-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            transition: var(--transition);
+            cursor: default;
+        }
+        .skill-item:hover {
+            border-color: var(--accent-light);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .skill-icon {
+            width: 40px; height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--accent-bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .skill-name {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .skill-desc {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            margin-top: 0.1rem;
+        }
+
+        /* ===== RESUME ===== */
+        .resume { background: var(--bg-primary); }
+        .resume-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+        .resume-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        .resume-content p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 520px;
+        }
+        .resume-action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.75rem;
+        }
+        .resume-action .btn {
+            padding: 0.9rem 2rem;
+            font-size: 0.9rem;
+        }
+        .resume-note {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .contact-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        .contact-left > p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .contact-link:hover {
+            border-color: var(--accent-light);
+            box-shadow: var(--shadow-sm);
+            transform: translateX(4px);
+        }
+        .contact-link-icon {
+            width: 42px; height: 42px;
+            border-radius: var(--radius-sm);
+            background: var(--accent-bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .contact-link-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        .contact-link-text span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        .contact-right {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+        .contact-right h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            box-shadow: 0 0 0 3px rgba(45,106,79,0.08);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-submit {
+            width: 100%;
+            justify-content: center;
+            padding: 0.9rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== 
+        .footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer a:hover { color: var(--accent); }
+
+        /* ===== ANIMATIONS ===== 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-left p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-right a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-right a:hover { 
+            color: var(--accent); 
+        }
+
+        /* Mobile: stack centered */
+        @media (max-width: 640px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-grid, .about-grid, .contact-grid, .resume-card {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .project-item, .project-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .project-item:nth-child(even) > * { direction: ltr; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-left { position: static; }
+            .about-highlights { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero { padding-top: 8rem; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px; left: 0; right: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.open { display: flex; }
+            .mobile-toggle { display: block; }
+            .resume-action { align-items: flex-start; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 3rem 1.25rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-statement { font-size: 1rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .project-item { gap: 2rem; }
+            .resume-card { padding: 2rem 1.5rem; }
+            .pv-elevateops .pv-stats { grid-template-columns: 1fr; }
+            .pv-elevateops .pv-services { grid-template-columns: 1fr; }
+            .pv-workflow .pv-metrics { grid-template-columns: 1fr; }
+            .pv-ux .pv-solutions { grid-template-columns: 1fr; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">BLESSING <span>OKORIE-ORUH</span></a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-left fade-in">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Available for new projects
+                    </div>
+                    <h1>Virtual Assistant <em>&</em><br>Web Support Specialist</h1>
+                    <p class="hero-statement">Helping businesses stay organized, responsive, and digitally capable, so they can focus on what they do best.</p>
+                    <p class="hero-intro">I work with remote teams and growing businesses to manage daily operations, streamline workflows, and maintain a polished online presence. From client coordination to website support, I bring structure and reliability to digital workspaces.</p>
+                    <div class="hero-cta">
+                        <a href="#work" class="btn btn-primary">View Work</a>
+                        <a href="#resume" class="btn btn-secondary">Download Resume</a>
+                        <a href="#contact" class="btn btn-ghost">Contact</a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in">
+                    <div class="hero-visual-inner">
+                        <div class="visual-header">
+                            <div class="visual-dots"><span></span><span></span><span></span></div>
+                            <span class="visual-title">Workspace Overview</span>
+                        </div>
+                        <div class="visual-cards">
+                            <div class="v-card">
+                                <div class="v-card-icon">📋</div>
+                                <div class="v-card-text">
+                                    <strong>Client Onboarding</strong>
+                                    <span>Workflow automation & documentation</span>
+                                </div>
+                                <span class="v-card-status">Active</span>
+                            </div>
+                            <div class="v-card">
+                                <div class="v-card-icon">🌐</div>
+                                <div class="v-card-text">
+                                    <strong>Website Updates</strong>
+                                    <span>Content management & UX review</span>
+                                </div>
+                                <span class="v-card-status">Active</span>
+                            </div>
+                            <div class="v-card">
+                                <div class="v-card-icon">📊</div>
+                                <div class="v-card-text">
+                                    <strong>Operations Report</strong>
+                                    <span>Weekly coordination summary</span>
+                                </div>
+                                <span class="v-card-status">Due</span>
+                            </div>
+                            <div class="v-card">
+                                <div class="v-card-icon">✉️</div>
+                                <div class="v-card-text">
+                                    <strong>Email Management</strong>
+                                    <span>Inbox organization & response</span>
+                                </div>
+                                <span class="v-card-status">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left fade-in">
+                    <span class="section-label">About</span>
+                    <h2>Building calm, <em>organized</em><br>digital workspaces</h2>
+                    <div class="about-divider"></div>
+                </div>
+                <div class="about-right fade-in">
+                    <p>I believe that behind every smooth running business is someone quietly keeping things in order. That's the role I fill, a reliable remote professional who ensures nothing falls through the cracks.</p>
+                    <p>My work centers on helping businesses stay organized in a digital first world. I coordinate workflows, manage client communications, support website operations, and create systems that make daily work feel less chaotic and more intentional.</p>
+                    <p>Whether it's setting up a structured client onboarding process, reviewing a website for usability improvements, or managing the small but essential tasks that keep a team moving, I approach each responsibility with care and consistency.</p>
+                    <p>I value clear communication, thoughtful organization, and the kind of quiet professionalism that lets teams focus on their core work while knowing the operational details are handled.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-num">01</span>
+                            <div class="highlight-text">
+                                <strong>Remote Operations</strong>
+                                <span>Workflow coordination & process management</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-num">02</span>
+                            <div class="highlight-text">
+                                <strong>Client Support</strong>
+                                <span>Communication, scheduling & follow-through</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-num">03</span>
+                            <div class="highlight-text">
+                                <strong>Web Support</strong>
+                                <span>Content updates, UX review & optimization</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-num">04</span>
+                            <div class="highlight-text">
+                                <strong>Digital Organization</strong>
+                                <span>Documentation, systems & team alignment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="work-header fade-in">
+                <span class="section-label">Featured Work</span>
+                <h2>Projects that reflect operational thinking</h2>
+                <p>A selection of work demonstrating digital support capability, structured problem-solving, and business-focused outcomes.</p>
+            </div>
+            <div class="projects-list">
+
+                <!-- Project 1: ElevateOps -->
+                <div class="project-item fade-in">
+                    <div class="project-visual pv-elevateops">
+                        <div class="project-visual-inner">
+                            <div class="pv-header">
+                                <div class="pv-header-dots"><span></span><span></span><span></span></div>
+                                <span class="pv-header-title">elevateops-landing-page</span>
+                            </div>
+                            <div class="pv-hero">
+                                <h4>ElevateOps</h4>
+                                <p>Remote Business Support Agency</p>
+                            </div>
+                            <div class="pv-stats">
+                                <div class="pv-stat">
+                                    <span class="pv-stat-num">50+</span>
+                                    <span class="pv-stat-label">Businesses Supported</span>
+                                </div>
+                                <div class="pv-stat">
+                                    <span class="pv-stat-num">98%</span>
+                                    <span class="pv-stat-label">Client Satisfaction</span>
+                                </div>
+                                <div class="pv-stat">
+                                    <span class="pv-stat-num">24/7</span>
+                                    <span class="pv-stat-label">Availability</span>
+                                </div>
+                            </div>
+                            <div class="pv-services">
+                                <div class="pv-svc"><div class="pv-svc-icon">✉️</div>Virtual Assistance</div>
+                                <div class="pv-svc"><div class="pv-svc-icon">🌐</div>Website Support</div>
+                                <div class="pv-svc"><div class="pv-svc-icon">⚙️</div>Workflow Coordination</div>
+                                <div class="pv-svc"><div class="pv-svc-icon">📋</div>Administrative Support</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Landing Page</span>
+                        <h3>ElevateOps Landing Page</h3>
+                        <p>A clean, conversion focused landing page designed to present a professional operations service. Built with attention to visual hierarchy, responsive layout, and clear call-to-action placement, demonstrating front-end capability and an understanding of how design supports business goals.</p>
+                        <div class="project-meta">
+                            <span>HTML/CSS</span>
+                            <span>Responsive</span>
+                            <span>UI Design</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://ochinonye.github.io/elevateops-landing-page/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Workflow System -->
+                <div class="project-item fade-in">
+                    <div class="project-visual pv-workflow">
+                        <div class="project-visual-inner">
+                            <div class="pv-header">
+                                <div class="pv-header-dots"><span></span><span></span><span></span></div>
+                                <span class="pv-header-title">remote-client-operations</span>
+                            </div>
+                            <div class="pv-flow-header">
+                                <span class="pv-flow-title">Client Operations Workflow</span>
+                            </div>
+                            <div class="pv-steps">
+                                <div class="pv-step">
+                                    <span class="pv-step-num">1</span>
+                                    <div class="pv-step-text">
+                                        <strong>Initial Inquiry</strong>
+                                        <span>Centralized intake & qualification</span>
+                                    </div>
+                                    <span class="pv-step-arrow">→</span>
+                                </div>
+                                <div class="pv-step">
+                                    <span class="pv-step-num">2</span>
+                                    <div class="pv-step-text">
+                                        <strong>Discovery Call</strong>
+                                        <span>Scheduling & pre-call brief</span>
+                                    </div>
+                                    <span class="pv-step-arrow">→</span>
+                                </div>
+                                <div class="pv-step">
+                                    <span class="pv-step-num">3</span>
+                                    <div class="pv-step-text">
+                                        <strong>Task Setup</strong>
+                                        <span>Board config & workflow automation</span>
+                                    </div>
+                                    <span class="pv-step-arrow">→</span>
+                                </div>
+                                <div class="pv-step">
+                                    <span class="pv-step-num">4</span>
+                                    <div class="pv-step-text">
+                                        <strong>Kickoff</strong>
+                                        <span>Systems test & 90-day roadmap</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pv-metrics">
+                                <div class="pv-metric">
+                                    <span class="pv-metric-val">67%</span>
+                                    <span class="pv-metric-label">Faster Response</span>
+                                </div>
+                                <div class="pv-metric">
+                                    <span class="pv-metric-val">100%</span>
+                                    <span class="pv-metric-label">Onboarding Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Workflow System</span>
+                        <h3>Remote Client Operations Workflow</h3>
+                        <p>A structured workflow system for managing remote client relationships from onboarding through ongoing support. This project showcases process thinking, mapping out stages, handoffs, and communication touchpoints to create a repeatable, scalable client experience.</p>
+                        <div class="project-meta">
+                            <span>Process Design</span>
+                            <span>Client Management</span>
+                            <span>Operations</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://ochinonye.github.io/Remote-Client-Operations-Workflow-System/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: UX Case Study -->
+                <div class="project-item fade-in">
+                    <div class="project-visual pv-ux">
+                        <div class="project-visual-inner">
+                            <div class="pv-header">
+                                <div class="pv-header-dots"><span></span><span></span><span></span></div>
+                                <span class="pv-header-title">website-optimization-ux</span>
+                            </div>
+                            <div class="pv-ux-header">
+                                <h4>Horizon Realty Group</h4>
+                                <p>Website Optimization & UX Improvement Review - Residential real estate agency with 15+ years in the market.</p>
+                            </div>
+                            <div class="pv-issues">
+                                <div class="pv-issue">
+                                    <span class="pv-issue-icon">!</span>
+                                    <span class="pv-issue-text">Cluttered layout with no visual hierarchy</span>
+                                </div>
+                                <div class="pv-issue">
+                                    <span class="pv-issue-icon">!</span>
+                                    <span class="pv-issue-text">Weak CTA buried in footer</span>
+                                </div>
+                                <div class="pv-issue">
+                                    <span class="pv-issue-icon">!</span>
+                                    <span class="pv-issue-text">Poor mobile responsiveness</span>
+                                </div>
+                            </div>
+                            <div class="pv-solutions">
+                                <div class="pv-sol">
+                                    <div class="pv-sol-icon">🎯</div>
+                                    <div class="pv-sol-text">Improve UX</div>
+                                </div>
+                                <div class="pv-sol">
+                                    <div class="pv-sol-icon">✨</div>
+                                    <div class="pv-sol-text">Modernize Design</div>
+                                </div>
+                                <div class="pv-sol">
+                                    <div class="pv-sol-icon">🧭</div>
+                                    <div class="pv-sol-text">Clear Navigation</div>
+                                </div>
+                                <div class="pv-sol">
+                                    <div class="pv-sol-icon">🤝</div>
+                                    <div class="pv-sol-text">Build Trust</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Case Study</span>
+                        <h3>Website Optimization & UX Review</h3>
+                        <p>A detailed review and improvement case study focused on website performance and user experience. This work reflects an analytical approach to digital presence, identifying friction points, proposing structured improvements, and documenting the rationale behind each recommendation.</p>
+                        <div class="project-meta">
+                            <span>UX Analysis</span>
+                            <span>Performance</span>
+                            <span>Documentation</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://ochinonye.github.io/Website-Optimization-UX-Improvement-Case-Study/" target="_blank" class="btn btn-primary">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="skills-header fade-in">
+                <span class="section-label">Tools & Skills</span>
+                <h2>The toolkit behind the work</h2>
+                <p>Technologies and platforms I use daily to keep operations running smoothly.</p>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-item">
+                    <div class="skill-icon">📧</div>
+                    <div>
+                        <div class="skill-name">Google Workspace</div>
+                        <div class="skill-desc">Docs, Sheets, Drive, Calendar</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📌</div>
+                    <div>
+                        <div class="skill-name">Trello</div>
+                        <div class="skill-desc">Project boards & task tracking</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <div>
+                        <div class="skill-name">Canva</div>
+                        <div class="skill-desc">Visual content & branding</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <div>
+                        <div class="skill-name">HTML / CSS</div>
+                        <div class="skill-desc">Web structure & styling</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🐙</div>
+                    <div>
+                        <div class="skill-name">GitHub</div>
+                        <div class="skill-desc">Version control & deployment</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📊</div>
+                    <div>
+                        <div class="skill-name">Microsoft Excel</div>
+                        <div class="skill-desc">Data organization & analysis</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📝</div>
+                    <div>
+                        <div class="skill-name">Notion</div>
+                        <div class="skill-desc">Documentation & wikis</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎥</div>
+                    <div>
+                        <div class="skill-name">Zoom</div>
+                        <div class="skill-desc">Meetings & virtual coordination</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="resume-card fade-in">
+                <div class="resume-content">
+                    <span class="section-label">Resume</span>
+                    <h2>Professional background</h2>
+                    <p>A summary of my experience in virtual assistance, remote operations, and web support. My background reflects a consistent focus on organization, clear communication, and reliable execution in digital work environments.</p>
+                </div>
+                <div class="resume-action">
+                    <a href="Blessing-Okorie-Resume.pdf" class="btn btn-primary" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Resume
+                    </a>
+                    <span class="resume-note">Blessing-Okorie-Resume.pdf</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left fade-in">
+                    <span class="section-label">Contact</span>
+                    <h2>Let's work together</h2>
+                    <p>I'm open to new opportunities in virtual assistance, remote operations, and web support. If you need someone organized, reliable, and digitally capable on your team, I'd love to hear from you.</p>
+                    <div class="contact-links">
+                        <a href="mailto:contact.blessing.services@gmail.com" class="contact-link">
+                            <div class="contact-link-icon">✉️</div>
+                            <div class="contact-link-text">
+                                <strong>Email</strong>
+                                <span>contact.blessing.services@gmail.com</span>
+                            </div>
+                        </a>
+                       <a href="https://wa.me/2349155841231" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <div class="contact-link-icon">💬</div>
+                            <div class="contact-link-text">
+                                <strong>WhatsApp</strong>
+                                <span>+234 915 584 1231</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right fade-in">
+                    <h3>Send a message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! This is a demo form.');">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell me about your project or needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <p>&copy; 2026 Blessing Okorie-Oruh. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        // Auto-update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
